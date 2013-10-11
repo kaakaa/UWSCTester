@@ -4,8 +4,7 @@ import org.kaakaa.uwsc.UWSC
 
 UWSC.test {
     script {
-        $ 'SEND_KEY("hoge")'
-        $ 'SEND_KEY("fuga")'
+        f "C:\\Program Files (x86)\\uwsc\\sample.UWS", true
     }
     assertUWSC {
         assertTitle('title')

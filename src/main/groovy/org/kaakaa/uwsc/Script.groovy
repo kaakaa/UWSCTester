@@ -9,11 +9,11 @@ class Script {
     }
     
     // read uwsc script file
-    def F(String path){
-        commands << Arrays.asList(new File(path).text.split(System.property('line.separator')))
+    def f(String path, boolean mmvIgonore = false){
+        commands.addAll(Arrays.asList(new File(path).text.split(System.getProperty('line.separator'))).findAll{ !it.startsWith('MMV') })
     }
     
     def String getCommands(){
-      return 'script'
+      return commands.join(System.getProperty('line.separator'))
     }
 }
