@@ -1,1 +1,1 @@
-groovy -cp ./build/libs/UWSCTester.jar uwsc.groovy
+groovy -cp ./build/libs/UWSCTester.jar -Dfile.encoding=utf-8 uwsc.groovy

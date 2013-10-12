@@ -2,6 +2,7 @@ package org.kaakaa.uwsc;
 
 import groovy.util.logging.*
 import java.util.logging.*
+import org.kaakaa.uwsc.exec.Executer
 
 @Log
 class UWSC {
@@ -11,14 +12,14 @@ class UWSC {
   static Script script = new Script()
   static AssertUWSC assertUWSC = new AssertUWSC()
 
+  static File scriptFile = File.createTempFile("temp",".UWS")
+  static File logFile = File.createTempFile("Log",".log")
+
   def static test(closure) {
     logger.info 'start'
     UWSC uwsc = new UWSC()
     closure.delegate = uwsc
     closure()
-    // 実行すべきスクリプトを一時ファイルに書き出し
-    def scriptFile = File.createTempFile("temp",".UWS")
-    def logFile = File.createTempFile("Log",".log")
 
     log.info("output scriptFile => ${scriptFile.getAbsolutePath()}")
     scriptFile.withWriter{ it << getCommands(logFile) }
@@ -28,23 +29,24 @@ class UWSC {
 
     Executer.exec(scriptFile)
 
-
-    final String WINDOWS_ID = logFile.text
-    logger.info "Current Active Window ID => ${WINDOWS_ID}"
+    String windowName = logFile.text
+    logger.info "Current Active Window Name => ${windowName}"
 
     logger.info '==== Assert Start ===='
-    assert()
+    assertUWSC(windowName, logFile)
     logger.info '==== Assert End ===='
 
-    log.info "delete ${scriptFile.getAbsolutePath()}"
-    scriptFile.delete()
-    log.info "delete ${logFile.getAbsolutePath()}"
-    logFile.delete()
+    logger.info "delete ${scriptFile.absolutePath}"
+    if(!scriptFile.delete()) { logger.warn "failed to delete scriptFile => ${scriptFile.absolutePath}" }
+ 
+    logger.info "delete ${logFile.getAbsolutePath()}"
+    if(!logFile.delete()) { logger.warn "failed to delete logFile => ${logFile.absolutePath}" }
   }
 
-  static void assert(){
+  def static void assertUWSC(String windowsID, File logFile){
+    this.assertUWSC.assertUWSC(windowsID, logFile)
   }
-  
+
   void script(closure) {
       closure.delegate = script
       closure( )
@@ -56,11 +58,14 @@ class UWSC {
   }
 
   def static String getCommands(File logFile){
-      def commands = ["Option LOGPATH=\"${logFile.getAbsolutePath()}\""]
+      def commands = ["Option LogPath=\"${logFile.getAbsolutePath()}\""]
       commands << "Option LogFile=2"
       commands << "LOGPRINT(FALSE)"
       commands << script.getCommands()
-      commands << "PRINT GETID(GET_ACTIVE_WIN)"
+      commands << "PRINT STATUS(GETID(GET_ACTIVE_WIN),ST_TITLE)"
       return commands.join(System.getProperty('line.separator'))
   }
+
+  
+
 }

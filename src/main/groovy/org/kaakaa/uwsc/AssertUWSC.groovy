@@ -1,14 +1,17 @@
 package org.kaakaa.uwsc;
 
+import org.kaakaa.uwsc.assertion.*
+
 class AssertUWSC {
-	List<String> commands = []
+	List<UWSCAssertion> assertions = []
 
     def assertTitle(String expected) {
-    	commands << "PRINT STATUS(GETID(GET_ACTIVE_WIN), ST_TITLE) + \"${expected}\""
+    	assertions << new TitleAssertion(expected)
     }
 
-    def String getCommands(){
-      return commands.join(System.getProperty('line.separator'))
+    def void assertUWSC(String windowsName, File logFile) {
+    	assertions.each{
+    		it.assertUWSC(windowsName)
+    	}
     }
-
 }

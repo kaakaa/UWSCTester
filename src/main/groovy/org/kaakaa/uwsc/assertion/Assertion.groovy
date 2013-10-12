@@ -1,5 +1,5 @@
 pacakge org.kaakaa.uwsc.assertion
 
-interface Assertion {
-	
+interface UWSCAssertion {
+	void assertUWSC(String windowName)
 }
