@@ -11,8 +11,6 @@ class UWSC {
   static Script script = new Script()
   static AssertUWSC assertUWSC = new AssertUWSC()
 
-  static final String UWSC_EXE = "C:\\Program Files (x86)\\uwsc\\UWSC.exe"
-
   def static test(closure) {
     logger.info 'start'
     UWSC uwsc = new UWSC()
@@ -28,21 +26,23 @@ class UWSC {
     logger.info 'Let execute following UWSC script'
     logger.info scriptFile.text
 
-    logger.info '==== Execute UWSC ===='
-    /"${UWSC_EXE}" "${scriptFile.getAbsolutePath()}"/.execute().waitFor()
-    logger.info '==== COMPLETE UWSC ===='
+    Executer.exec(scriptFile)
+
 
     final String WINDOWS_ID = logFile.text
     logger.info "Current Active Window ID => ${WINDOWS_ID}"
 
     logger.info '==== Assert Start ===='
-    // assert()
+    assert()
     logger.info '==== Assert End ===='
 
     log.info "delete ${scriptFile.getAbsolutePath()}"
     scriptFile.delete()
     log.info "delete ${logFile.getAbsolutePath()}"
     logFile.delete()
+  }
+
+  static void assert(){
   }
   
   void script(closure) {
