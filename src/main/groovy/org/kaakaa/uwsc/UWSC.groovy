@@ -1,6 +1,12 @@
 package org.kaakaa.uwsc;
 
+import groovy.util.logging.*
+import java.util.logging.*
+
+@Log
 class UWSC {
+
+  static final Logger logger = Logger.getLogger(UWSC.class.toString())
 
   static Script script = new Script()
   static AssertUWSC assertUWSC = new AssertUWSC()
@@ -8,22 +14,34 @@ class UWSC {
   static final String UWSC_EXE = "C:\\Program Files (x86)\\uwsc\\UWSC.exe"
 
   def static test(closure) {
+    logger.info 'start'
     UWSC uwsc = new UWSC()
     closure.delegate = uwsc
     closure()
     // 実行すべきスクリプトを一時ファイルに書き出し
     def scriptFile = File.createTempFile("temp",".UWS")
-    def logFile = File.createTempFile("Log","log")
+    def logFile = File.createTempFile("Log",".log")
 
-    println scriptFile.getAbsolutePath()
+    log.info("output scriptFile => ${scriptFile.getAbsolutePath()}")
     scriptFile.withWriter{ it << getCommands(logFile) }
-    //println scriptFile.text
 
-    println scriptFile.exists()
-    println scriptFile.setReadable(true, false) && scriptFile.canRead()
-    /"${UWSC_EXE}" "${scriptFile.getAbsolutePath()}"/.execute()
+    logger.info 'Let execute following UWSC script'
+    logger.info scriptFile.text
 
-    //scriptFile.delete()
+    logger.info '==== Execute UWSC ===='
+    /"${UWSC_EXE}" "${scriptFile.getAbsolutePath()}"/.execute().waitFor()
+    logger.info '==== COMPLETE UWSC ===='
+
+    final String WINDOWS_ID = logFile.text
+    logger.info "Current Active Window ID => ${WINDOWS_ID}"
+
+    logger.info '==== Assert Start ===='
+    // assert()
+    logger.info '==== Assert End ===='
+
+    log.info "delete ${scriptFile.getAbsolutePath()}"
+    scriptFile.delete()
+    log.info "delete ${logFile.getAbsolutePath()}"
     logFile.delete()
   }
   
@@ -36,12 +54,13 @@ class UWSC {
       closure.delegate = assertUWSC
       closure()
   }
-  
-  static String getCommands(File logFile){
-      def commands = ["Option LogPath='${logFile.getAbsolutePath()}'"]
+
+  def static String getCommands(File logFile){
+      def commands = ["Option LOGPATH=\"${logFile.getAbsolutePath()}\""]
+      commands << "Option LogFile=2"
+      commands << "LOGPRINT(FALSE)"
       commands << script.getCommands()
-      commands << "SLEEP(1)"
-      commands << assertUWSC.getCommands()
+      commands << "PRINT GETID(GET_ACTIVE_WIN)"
       return commands.join(System.getProperty('line.separator'))
   }
 }

@@ -1,0 +1,1 @@
+watch( '^(.*)\.(?:groovy|java)' )	{ |md| system("gradle jar") }

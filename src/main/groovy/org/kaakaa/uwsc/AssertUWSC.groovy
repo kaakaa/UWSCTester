@@ -10,4 +10,5 @@ class AssertUWSC {
     def String getCommands(){
       return commands.join(System.getProperty('line.separator'))
     }
+
 }
