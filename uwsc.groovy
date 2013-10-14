@@ -10,5 +10,7 @@ UWSC.test {
     }
     assertUWSC {
         assertTitle('無題 - メモ帳')
+        //assertMessage('hoge')
+        //assertClass('hoge')
     }
 }
