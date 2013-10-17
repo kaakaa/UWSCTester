@@ -16,7 +16,6 @@ class MessageAssertion implements UWSCAssertion {
 		def command = []
 		command << "Option LogPath=\"${logFile.absolutePath}\""
 		command << "Option LogFile=2"
-		command << "SLEEP(5)"
 		command << "PRINT GETSTR(GETID(\"${rstrip(windowName)}\"))"
 		def scriptFile = File.createTempFile("TitleAssertion",".UWS")
 		scriptFile.write(command.join(System.getProperty('line.separator')))

@@ -6,11 +6,11 @@ encoding = 'utf-8'
 
 UWSC.test {
     script {
-        f "C:\\Program Files (x86)\\uwsc\\sample.UWS", true
+        f "${new File('.','sample.UWS').absolutePath}", true
     }
     assertUWSC {
         assertTitle('無題 - メモ帳')
-        //assertMessage('hoge')
-        //assertClass('hoge')
+        assertMessage('')
+        assertClass('Notepad')
     }
 }

@@ -39,6 +39,7 @@ class UWSC {
     logger.info "delete ${scriptFile.absolutePath}"
     if(!scriptFile.delete()) { logger.warn "failed to delete scriptFile => ${scriptFile.absolutePath}" }
  
+ 
     logger.info "delete ${logFile.getAbsolutePath()}"
     if(!logFile.delete()) { logger.warn "failed to delete logFile => ${logFile.absolutePath}" }
   }
