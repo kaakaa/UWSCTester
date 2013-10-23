@@ -9,18 +9,13 @@ class UWSC {
 
   static final Logger logger = Logger.getLogger(UWSC.class.toString())
 
-  static Script script = new Script()
-  static AssertUWSC assertUWSC = new AssertUWSC()
+  Script script = new Script()
+  AssertUWSC assertUWSC = new AssertUWSC()
 
-  static File scriptFile = File.createTempFile("temp",".UWS")
-  static File logFile = File.createTempFile("Log",".log")
+  File scriptFile = File.createTempFile("temp",".UWS")
+  File logFile = File.createTempFile("Log",".log")
 
-  def static test(closure) {
-    logger.info 'start'
-    UWSC uwsc = new UWSC()
-    closure.delegate = uwsc
-    closure()
-
+  def test() {
     log.info("output scriptFile => ${scriptFile.getAbsolutePath()}")
     scriptFile.withWriter{ it << getCommands(logFile) }
 
@@ -44,7 +39,7 @@ class UWSC {
     if(!logFile.delete()) { logger.warn "failed to delete logFile => ${logFile.absolutePath}" }
   }
 
-  def static void assertUWSC(String windowsID, File logFile){
+  def void assertUWSC(String windowsID, File logFile){
     this.assertUWSC.assertUWSC(windowsID, logFile)
   }
 
@@ -58,7 +53,7 @@ class UWSC {
       closure()
   }
 
-  def static String getCommands(File logFile){
+  def String getCommands(File logFile){
       def commands = ["Option LogPath=\"${logFile.getAbsolutePath()}\""]
       commands << "Option LogFile=2"
       commands << "LOGPRINT(FALSE)"
@@ -66,7 +61,4 @@ class UWSC {
       commands << "PRINT STATUS(GETID(GET_ACTIVE_WIN),ST_TITLE)"
       return commands.join(System.getProperty('line.separator'))
   }
-
-  
-
 }
