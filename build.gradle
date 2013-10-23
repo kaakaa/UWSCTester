@@ -1,7 +1,17 @@
 apply plugin: 'groovy'
 
+sourceCompatibility = 1.7
+version = 1.0
+
 repositories {
 	mavenCentral()
+}
+
+jar {
+	manifest {
+		attributes "Main-Class": "org.kaakaa.uwsc.UwscMain"
+		attributes "Class-Path": "../../lib/groovy-all-2.1.5.jar"
+	}
 }
 
 dependencies {
