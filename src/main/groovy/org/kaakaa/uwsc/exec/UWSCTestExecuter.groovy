@@ -16,8 +16,7 @@ import org.kaakaa.uwsc.UWSC
 class UWSCTestExecuter {
     private static List<Object[]> list
 
-    // TODO テストケース名修正
-    @Parameterized.Parameters(name="{0} plus {1} equals {2}")
+    @Parameterized.Parameters(name="{0} is executing")
     public static List<Object[]> getParameters(){
         return list;
     }
@@ -28,7 +27,7 @@ class UWSCTestExecuter {
 
     private final UWSC uwsc;
 
-    public UWSCTestExecuter(UWSC uwsc){
+    public UWSCTestExecuter(String name, UWSC uwsc){
         this.uwsc = uwsc;
     }
 

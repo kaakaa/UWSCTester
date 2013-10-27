@@ -1,20 +1,16 @@
 package org.kaakaa.uwsc;
 
 import groovy.util.logging.*
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.Parameterized
 
 import java.util.logging.*
 import org.kaakaa.uwsc.exec.Executer
-
-import static org.junit.Assert.assertEquals
 
 @Log
 class UWSC {
 
   static final Logger logger = Logger.getLogger(UWSC.class.toString())
 
+  String name = "Test";
   Script script = new Script()
   AssertUWSC assertUWSC = new AssertUWSC()
 
@@ -47,6 +43,10 @@ class UWSC {
 
   def void assertUWSC(String windowsID, File logFile){
     this.assertUWSC.assertUWSC(windowsID, logFile)
+  }
+
+  def name(String testName){
+      this.name = testName
   }
 
   void script(closure) {

@@ -17,7 +17,7 @@ class ExecuteTest {
             [1, 3, 4] as Object[]
         ]);
         UWSCTestExecuter.setList([
-                [uwsc] as Object[]
+                [uwsc.name, uwsc] as Object[]
         ])
         JUnitCore.main(UwscTestSuite.class.getName())
         //uwsc.test()

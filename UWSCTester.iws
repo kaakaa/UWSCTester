@@ -4,9 +4,9 @@
     <list default="true" id="43b3bf98-4a22-4afc-af45-f1b700966d01" name="Default" comment="" />
     <ignored path="UWSCTester.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/ExecuteTest.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382836311428" ignored="false" />
+    <file path="/ExecuteTest.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382837313068" ignored="false" />
     <file path="/TestSuite.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382790190050" ignored="false" />
-    <file path="/UWSC.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382835680551" ignored="false" />
+    <file path="/UWSC.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382837195171" ignored="false" />
     <file path="/build.gradle" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382786626596" ignored="false" />
     <file path="/UwscMain.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382787210959" ignored="false" />
     <file path="/src.watchr" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382787366086" ignored="false" />
@@ -14,8 +14,9 @@
     <file path="/fragment.java" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382789336349" ignored="false" />
     <file path="/UwscMainTest.java" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382795352596" ignored="false" />
     <file path="/Dummy.txt" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382789336349" ignored="false" />
-    <file path="/UWSCTestExecuter.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382836469193" ignored="false" />
+    <file path="/UWSCTestExecuter.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382837324899" ignored="false" />
     <file path="/UwscTestSuite.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382836366767" ignored="false" />
+    <file path="/uwsc.groovy" changelist="43b3bf98-4a22-4afc-af45-f1b700966d01" time="1382837107124" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,7 @@
       <file leaf-file-name="UWSC.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/UWSC.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="34" selection-start="1827" selection-end="1827" vertical-scroll-proportion="0.0">
+            <state line="8" column="23" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#26#54#0" expanded="true" />
               </folding>
@@ -146,7 +147,7 @@
       <file leaf-file-name="UWSCTestExecuter.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/exec/UWSCTestExecuter.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="19" selection-start="638" selection-end="638" vertical-scroll-proportion="0.50581396">
+            <state line="27" column="78" selection-start="648" selection-end="648" vertical-scroll-proportion="0.62936044">
               <folding>
                 <element signature="e#30#51#0" expanded="true" />
               </folding>
@@ -154,10 +155,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="uwsc.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uwsc.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="30" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ExecuteTest.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/org/kaakaa/uwsc/ExecuteTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="20" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
+            <state line="19" column="28" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -182,9 +192,10 @@
         <option value="$PROJECT_DIR$/src/test/groovy/org/kaakaa/uwsc/UwscMainTest.java" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/test/TestSuite.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/UwscMainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/test/UwscTestSuite.groovy" />
+        <option value="$PROJECT_DIR$/uwsc.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/UWSC.groovy" />
         <option value="$PROJECT_DIR$/src/main/resources/org/kaakaa/uwsc/ExecuteTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/test/UwscTestSuite.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/exec/UWSCTestExecuter.groovy" />
       </list>
     </option>
@@ -749,29 +760,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/UWSC.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="34" selection-start="1827" selection-end="1827" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#26#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/UwscMainTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="19" selection-start="911" selection-end="911" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/org/kaakaa/uwsc/ExecuteTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -783,9 +776,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uwsc.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/UWSC.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#26#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/org/kaakaa/uwsc/ExecuteTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="28" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/org/kaakaa/uwsc/exec/UWSCTestExecuter.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="19" selection-start="638" selection-end="638" vertical-scroll-proportion="0.50581396">
+        <state line="27" column="78" selection-start="648" selection-end="648" vertical-scroll-proportion="0.62936044">
           <folding>
             <element signature="e#30#51#0" expanded="true" />
           </folding>
