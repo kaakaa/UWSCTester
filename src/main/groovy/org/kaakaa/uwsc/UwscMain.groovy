@@ -4,7 +4,7 @@ class UwscMain {
 	public static void main(String[] args){
 		def dsl = new File('uwsc.groovy').text
 		def dslDef = UwscMain.class.getClassLoader().getResource('org/kaakaa/uwsc/ExecuteTest.groovy').text
-		def script = """
+      	def script = """
 			${dsl}
 			${dslDef}
 		"""

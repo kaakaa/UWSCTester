@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.7
 version = 1.0
@@ -10,10 +11,11 @@ repositories {
 jar {
 	manifest {
 		attributes "Main-Class": "org.kaakaa.uwsc.UwscMain"
-		attributes "Class-Path": "../../lib/groovy-all-2.1.5.jar"
+		attributes "Class-Path": "../../lib/groovy-all-2.1.5.jar ../../lib/junit-4.11.jar ../../lib/hamcrest-core-1.3.jar"
 	}
 }
 
 dependencies {
 	compile "org.codehaus.groovy:groovy-all:2.1.1"
+    compile "junit:junit:4.11"
 }

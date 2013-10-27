@@ -1,8 +1,14 @@
 package org.kaakaa.uwsc;
 
 import groovy.util.logging.*
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
+
 import java.util.logging.*
 import org.kaakaa.uwsc.exec.Executer
+
+import static org.junit.Assert.assertEquals
 
 @Log
 class UWSC {
@@ -15,7 +21,7 @@ class UWSC {
   File scriptFile = File.createTempFile("temp",".UWS")
   File logFile = File.createTempFile("Log",".log")
 
-  def test() {
+  def void test() {
     log.info("output scriptFile => ${scriptFile.getAbsolutePath()}")
     scriptFile.withWriter{ it << getCommands(logFile) }
 
