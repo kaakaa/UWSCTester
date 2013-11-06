@@ -1,6 +1,6 @@
 encoding = 'utf-8'
 
-test.uwsc {
+test {
     name "サンプルテスト"
     script {
         f "${new File('.','sample.UWS').absolutePath}", true

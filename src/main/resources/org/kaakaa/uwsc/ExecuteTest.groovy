@@ -1,9 +1,12 @@
 import org.junit.runner.JUnitCore
-import org.junit.runner.Result
 import org.kaakaa.uwsc.UWSC
-import org.kaakaa.uwsc.UwscMainTest
+
 import org.kaakaa.uwsc.exec.UWSCTestExecuter
 import org.kaakaa.uwsc.test.UwscTestSuite
+
+def test(closure){
+    test = new ExecuteTest().uwsc(closure)
+}
 
 class ExecuteTest {
 	def uwsc(closure){
@@ -22,8 +25,4 @@ class ExecuteTest {
         JUnitCore.main(UwscTestSuite.class.getName())
         //uwsc.test()
 	}
-}
-
-def getTest(){
-	test = new ExecuteTest()
 }

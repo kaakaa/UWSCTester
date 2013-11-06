@@ -3,7 +3,7 @@ package org.kaakaa.uwsc.test
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 import org.junit.runners.Suite.SuiteClasses
-import org.kaakaa.uwsc.UwscMainTest
+
 import org.kaakaa.uwsc.exec.UWSCTestExecuter
 
 /**
