@@ -14,6 +14,6 @@ import org.kaakaa.uwsc.exec.UWSCTestExecuter
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(Suite.class)
-@SuiteClasses([UWSCTestExecuter.class, UwscMainTest.class])
+@SuiteClasses([UWSCTestExecuter.class])
 class UwscTestSuite {
 }
