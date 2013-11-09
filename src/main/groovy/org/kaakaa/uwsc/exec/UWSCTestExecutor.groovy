@@ -13,7 +13,7 @@ import org.kaakaa.uwsc.UWSC
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(Parameterized.class)
-class UWSCTestExecuter {
+class UWSCTestExecutor {
     private static List<Object[]> list
 
     @Parameterized.Parameters(name="{0} is executing")
@@ -27,7 +27,7 @@ class UWSCTestExecuter {
 
     private final UWSC uwsc;
 
-    public UWSCTestExecuter(String name, UWSC uwsc){
+    public UWSCTestExecutor(String name, UWSC uwsc){
         this.uwsc = uwsc;
     }
 

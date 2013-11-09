@@ -3,6 +3,7 @@ package org.kaakaa.uwsc;
 import org.kaakaa.uwsc.assertion.*
 
 class AssertUWSC {
+    // FIXME create UWSCAssertion interface
 	List<UWSCAssertion> assertions = []
 
     def assertTitle(String expected) {

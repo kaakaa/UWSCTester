@@ -4,7 +4,7 @@ import org.junit.runner.RunWith
 import org.junit.runners.Suite
 import org.junit.runners.Suite.SuiteClasses
 
-import org.kaakaa.uwsc.exec.UWSCTestExecuter
+import org.kaakaa.uwsc.exec.UWSCTestExecutor
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,6 +14,6 @@ import org.kaakaa.uwsc.exec.UWSCTestExecuter
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(Suite.class)
-@SuiteClasses([UWSCTestExecuter.class])
+@SuiteClasses([UWSCTestExecutor.class])
 class UwscTestSuite {
 }
